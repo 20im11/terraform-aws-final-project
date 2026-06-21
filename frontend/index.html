@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Three-Tier App — Frontend</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #0f172a; color: #e2e8f0;
+           display: flex; min-height: 100vh; margin: 0; align-items: center; justify-content: center; }
+    .card { background: #1e293b; padding: 2.5rem 3rem; border-radius: 16px; max-width: 640px;
+            box-shadow: 0 10px 40px rgba(0,0,0,.4); }
+    h1 { margin: 0 0 .5rem; }
+    code { background: #334155; padding: .15rem .4rem; border-radius: 6px; }
+    ul { line-height: 1.8; }
+    .tag { display:inline-block; background:#2563eb; color:#fff; padding:.2rem .6rem;
+           border-radius:999px; font-size:.8rem; margin-bottom:1rem; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <span class="tag">Tier 1 — Frontend (S3 Static Hosting)</span>
+    <h1>Hello from S3 🚀</h1>
+    <p>This static page is hosted on <strong>Amazon S3</strong> and replicated
+       across two AWS regions for cross-region durability.</p>
+    <p>It is the entry point of a three-tier architecture:</p>
+    <ul>
+      <li><strong>Tier 1 — Frontend:</strong> this S3 static website (cross-region replicated)</li>
+      <li><strong>Tier 2 — Backend:</strong> a Python/Flask API on ECS Fargate behind an ALB</li>
+      <li><strong>Tier 3 — Database:</strong> PostgreSQL on Amazon RDS (private subnets)</li>
+    </ul>
+    <p>The backend API answers on the ALB DNS name — try <code>/</code>,
+       <code>/health</code>, and the <code>/items</code> CRUD endpoints.</p>
+  </div>
+</body>
+</html>
